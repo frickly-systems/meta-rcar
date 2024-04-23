@@ -51,7 +51,7 @@ index 79de721..cf3722e 100644
 +
 +	err = st_sensors_init_sensor(indio_dev, pdata);
  	if (err < 0)
- 		goto st_magn_power_off;
+ 		return err;
  
 diff --git a/include/linux/platform_data/st_sensors_pdata.h b/include/linux/platform_data/st_sensors_pdata.h
 index e40b28c..897051e 100644
