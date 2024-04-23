@@ -73,5 +73,8 @@ patch 0154-staging-most-dim2-use-device-release-method.patch
 patch 0155-media-rcar-vin-Fix-VNIS_REG-settings.patch
 patch 0156-arm64-dts-renesas-ulcb-kf-Rename-ov5647-camera-clock.patch
 patch 0157-arm64-dts-renesas-ulcb-kf-Move-ov5642-gpio-pins-to-o.patch
-patch 0158-media-i2c-imx219-Align-default-frame-width-to-32.patch
 patch 0159-media-rcar-vin-Fix-YUV-input-V4L2_PIX_FMT_GREY-forma.patch
+patch 0160-media-i2c-imx219-remove-redundant-writes.patch
+patch 0161-media-i2c-imx219-Split-common-registers-from-mode-ta.patch
+patch 0162-media-i2c-imx219-Fix-binning-for-RAW8-capture.patch
+patch 0163-media-i2c-imx219-Align-default-frame-width-to-32.patch
