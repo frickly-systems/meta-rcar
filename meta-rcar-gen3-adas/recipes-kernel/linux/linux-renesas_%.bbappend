@@ -5,12 +5,24 @@ COMPATIBLE_MACHINE_v3msk = "v3msk"
 COMPATIBLE_MACHINE_condor = "condor"
 COMPATIBLE_MACHINE_v3hsk = "v3hsk"
 
+SAFE_RENDERING_SUPPORT = " \
+    file://0017-gpio-pca953x-do-not-ignore-i2c-errors.patch \
+    file://0145-iio-st_sensors-Call-st_sensors_power_enable-from-bus.patch \
+    file://0153-staging-most-dim2-do-not-double-register-the-same-de.patch \
+    file://0154-staging-most-dim2-use-device-release-method.patch \
+    file://0160-media-i2c-imx219-remove-redundant-writes.patch \
+    file://0161-media-i2c-imx219-Split-common-registers-from-mode-ta.patch \
+    file://0162-media-i2c-imx219-Fix-binning-for-RAW8-capture.patch \
+"
+
+
 SRC_URI_append = " \
     ${@oe.utils.conditional("DISABLE_RPC_ACCESS", "1", "", " file://hyperflash.cfg", d)} \
     file://nvme.cfg \
     file://imr.cfg \
     file://disable-unused.cfg \
     file://enable.cfg \
+    ${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "${SAFE_RENDERING_SUPPORT}", "file://0164-arm64-dts-renesas-Add-ulcb-kf-dtso-files.patch", d)} \
     file://renesas.scc \
 "
 
