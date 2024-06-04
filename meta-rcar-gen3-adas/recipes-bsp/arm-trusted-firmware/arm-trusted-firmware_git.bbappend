@@ -17,6 +17,7 @@ SRC_URI:append = " \
     file://0002-lib-psci-Fix-CPU0-offline-issue-on-the-V3x-SoCs.patch \
     file://0003-drivers-renesas-io_memdrv-Invalidate-cache-before-ex.patch \
     file://0004-plat-renesas-rcar-Add-R-Car-V3H-support.patch \
+    file://0005-fix-bla32-undefined-on-SPD_NONE.patch \
 "
 
 # Override the do_ipl_opt_compile function to add the ${ATFW_OPT_RPC} option
