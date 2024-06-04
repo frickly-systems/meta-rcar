@@ -52,7 +52,7 @@ new file mode 100644
 index 0000000..2926ddb
 --- /dev/null
 +++ b/board/renesas/v3msk/cpld.c
-@@ -0,0 +1,359 @@
+@@ -0,0 +1,360 @@
 +/*
 + * V3MSK board CPLD access support
 + *
@@ -69,6 +69,7 @@ index 0000000..2926ddb
 +#include <errno.h>
 +#include <linux/err.h>
 +#include <sysreset.h>
++#include <command.h>
 +
 +#define CPLD_ADDR_PRODUCT_L		0x000 /* R */
 +#define CPLD_ADDR_PRODUCT_H		0x001 /* R */
@@ -286,7 +287,7 @@ index 0000000..2926ddb
 +	mdio_bb_write(priv, addr >> 5, addr & 0x1f, data);
 +}
 +
-+static int do_cpld(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
++static int do_cpld(struct cmd_tbl *cmdtp, int flag, int argc, char * const argv[])
 +{
 +	struct udevice *dev;
 +	u16 addr, val;
